@@ -14,9 +14,9 @@ const NavbarComponent = () => {
         <nav className="lg:bg-white lg:sticky top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[50px] py-2 z-50">
             {/* Logo + Branding */}
             <div className="flex items-center gap-1">
-                <img src={LogoPNG} alt="official-logo" className="lg:w-12 lg:h-12" />
-                <p className="w-[72.28px] lg:w-[109px] text-[10.84px] leading-none tracking-normal font-semibold text-left text-secondary lg:hidden lg:text-primary lg:text-[16.34px]!">
-                    {"BrightLife E"}
+                <img src={LogoPNG} alt="official-logo" className="w-6 h-6 lg:w-12 lg:h-12" />
+                <p className="text-sm font-sunFlower leading-none font-bold text-left lg:hidden">
+                    BrightLife<br /> Enhancement Services
                 </p>
             </div>
 
