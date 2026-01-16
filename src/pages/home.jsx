@@ -2,10 +2,13 @@ import React from "react";
 import ButtonComponent from "../components/button-component.jsx";
 import {getSpecializationList} from "../components/specialization/specialization-list.jsx";
 import Specialization from "../components/specialization/specialization.jsx";
+import NursePNG from "../assets/img/nurse.png";
+import {getServiceList} from "../components/services/service-list.jsx";
+import ServiceComponent from "../components/services/service.jsx";
 
 function HomePage() {
     return (
-        <>
+        <div className={"2xl:w-7xl 2xl:mx-auto"}>
             <section className={"bg-[url(./assets/img/bg-home.png)] bg-no-repeat bg-cover h-[500px] px-6 lg:px-[50px] flex items-center"}>
                 <div className={"text-center lg:text-left"}>
                     <h1 className={"font-sunFlower text-4xl lg:text-[64px] font-bold text-white leading-none tracking-normal"}>BrightLife Enhancement Services</h1>
@@ -46,8 +49,27 @@ function HomePage() {
                     </div>
                 </div>
             </section>
-            <section className={"py-[100px]"}></section>
-        </>
+            <section className={"py-[50px]"}>
+                <div className={"text-center space-y-5 px-3"}>
+                    <h2 className={"font-sunFlower font-bold text-4xl lg:text-[40px]"}>Our Services</h2>
+                    <p className={"font-poppins text-sm lg:text-[16px]"}>Designed services designed to support your mental health journey</p>
+                </div>
+                <div className={"grid lg:grid-cols-2 lg:justify-items-stretch p-6 lg:p-[50px] gap-[30px] lg:gap-[50px]"}>
+                    <img src={NursePNG} alt={"nurse"} className={"h-full object-cover"} />
+                    <div className={"grid grid-cols-6 space-y-5 lg:place-self-center lg:space-y-[30px]"}>
+                        {getServiceList.map((item, index) => (
+                            <ServiceComponent
+                            key={index}
+                            image={item.image}
+                            altText={item.altText}
+                            headingText={item.headingText}
+                            paragraphText={item.paragraphText}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 }
 
